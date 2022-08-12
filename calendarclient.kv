@@ -1,0 +1,64 @@
+#:kivy 2.0.0
+<MonthLayout>:
+	cols: 7
+
+<DayOfMonthWidget>:
+	size_hint: .9, .9
+	canvas:
+		Color:
+			rgba: 0.5,0.5,0.5,1
+		RoundedRectangle:
+			pos: self.x, self.y
+			size: self.width, self.height
+		Color:
+			rgba: 0,.1,.3,1
+		RoundedRectangle:
+			pos: self.x + 1, self.y + 1
+			size: self.width - 2, self.height - 2
+		
+<HeaderWidget>:
+	canvas:
+		Color:
+			rgba: 0.5,0.5,0.5,1
+		Rectangle:
+			pos: self.x, self.y
+			size: self.width, self.height
+		Color:
+			rgba: 1,1,1,1
+		RoundedRectangle:
+			pos: self.x + 2, self.y + 2
+			size: self.width - 4, self.height - 4
+		Rectangle:
+			pos: self.x + 2, self.y + 4
+			size: self.width - 4, self.height - 4
+	
+<OperationsWidget>:
+	canvas:
+		Color:
+			rgba: 0.5,0.5,0.5,1
+		Rectangle:
+			pos: self.x, self.y
+			size: self.width, self.height
+		Color:
+			rgba: 1,1,1,1
+		RoundedRectangle:
+			pos: self.x + 2, self.y + 2
+			size: self.width - 4, self.height - 4
+		Rectangle:
+			pos: self.x + 2, self.y
+			size: self.width - 4, self.height - 4
+
+<ScreenWidget>:
+	pos: 0, 0
+	size: root.width, root.height
+	HeaderWidget:
+		pos: 0, root.height - 100
+		size: root.width, 100
+	MonthLayout:
+		pos: 0, 150
+		size: root.width, root.height - 250
+	OperationsWidget:
+		pos: 0, 0
+		size: root.width, 150
+	
+	
